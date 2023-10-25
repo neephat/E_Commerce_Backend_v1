@@ -10,7 +10,7 @@ const mongoDB = process.env.MONGODB_SERVER.replace(
 );
 
 mongoose
-    .connect(mongoDB)
+    .connect(mongoDB, {traceDeprecation: true})
     .then(() => console.log("Successfully connected to MongoDB"))
     .catch((err) => console.log(err, "MongoDB connection Failed!"));
 
